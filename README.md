@@ -31,8 +31,9 @@ following functionalities:
    git clone https://github.com/panayiotishad04/Amplifier-Collector.git
    cd <your-repository-name>
    ```
-2. Add the credentials for Censys and IPinfo in the .env file
-   ```python
+2. Create a file in the project's directory with name .env and add the credentials for Censys
+and IPinfo by replacing the values of the corresponding variables
+   ```sh
    CENSYS_API_ID=add_censys_api_id
    CENSYS_API_SECRET=add_censys_api_secret_key
    IPINFO_API_KEY=add_ipinfo_api_key
