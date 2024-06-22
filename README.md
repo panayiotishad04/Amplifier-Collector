@@ -1,17 +1,17 @@
 # Amplifier Detector
 
-The repository contains the code used in my research project with title "Estimating the 
+The repository contains the code used in my research project with the title "Estimating the 
 Amplification Factor in the Network Infrastructure of France".
 
 ## Use
-The code is used to help network administrators or fellow researchers to identify amplifiers withing
+The code is used to help network administrators or fellow researchers identify amplifiers within
 network infrastructures. Amplifiers are vulnerable servers that return large responses
-on small requests. 
+to small requests. 
 
 The code should be used ethically without abusing the identified vulnerable servers. 
 
 ## Features
-The code target mainly three protocols: DNS, NTP, and Memcached and implements the
+The code targets mainly three protocols: DNS, NTP, and Memcached, and contains the
 following functionalities:
 * Collect servers running a specific protocol using Censys API
 * Find authoritative DNS servers in a country
@@ -49,8 +49,8 @@ following functionalities:
 ## Step 1: Collecting Servers
 
 ### A. Censys
-1. Change the query input in function e.g. "location.country_code: FR AND services.service_name: NTP AND services.port: 123"
-   run ```python server_collection.py query_censys_and_save <query_input> <output_filename>```\
+run ```python server_collection.py query_censys_and_save <query_input> <output_filename>``` to collect
+   servers running a specific protocol \
    ```<query_input>: Check censys search syntax``` \
    ```e.g., f"location.country_code: FR AND services.service_name: NTP AND services.port: 123"```
    
@@ -87,8 +87,8 @@ collect open recursive DNS servers.
 ### C. NTP
 run ```python amplifier_discovery.py filter_open_ntp_servers <input_filename> <output_filename>``` to 
 collect open servers running NTP.
----
 
+---
 ### D. Memcached
 1. run ```python amplifier_discovery.py filter_open_memcached_servers <input_filename> <output_filename>```
 to filter open Memcached servers by checking if they reply on UDP when asking for the
@@ -143,17 +143,17 @@ to get the server's buffer size.
 ---
 ### Recursive DNS
 - run ```python server_fingerprinting.py collect_recursive_dns_versions <input_filename> <output_filename>```
-to get the server's version .
+to get the server's version.
 
 - run ```python server_fingerprinting.py collect_recursive_buffer_sizes <input_filename> <output_filename>```
 to get the server's buffer size.
 
 ---
 ### NTP
-run ```python server_fingerprinting.py collect_ntp_versions <input_filename> <output_filename>``` to ge the
+run ```python server_fingerprinting.py collect_ntp_versions <input_filename> <output_filename>``` to get the
 version of NTP servers with ntpq.
 
 ---
 ### Memcached
 run ```python server_fingerprinting.py collect_memcached_versions <input_filename> <output_filename>``` to
-get version of Memcached servers over TCP.
+get the versions of Memcached servers over TCP.
