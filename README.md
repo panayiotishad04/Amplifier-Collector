@@ -1,4 +1,4 @@
-# Amplifier Detector
+# Amplifier Collector
 
 The repository contains the code used in my research project with the title "Estimating the 
 Amplification Factor in the Network Infrastructure of France".
